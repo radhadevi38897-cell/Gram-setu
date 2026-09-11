@@ -1,4 +1,18 @@
 import streamlit as st
+import streamlit as st
+import speech_recognition as sr
+from gtts import gTTS
+import os
+def listen_bg():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        st.info("बोलिए, सुन रहे हैं...")
+        audio = r.listen(source)
+        try:
+            text = r.recognize_google(audio, language="hi-IN")
+            return text
+        except:
+            return ""
 
 st.set_page_config(page_title="Gram-Setu Advanced", page_icon="🌾", layout="centered")
 
