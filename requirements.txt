@@ -1,4 +1,4 @@
 SpeechRecognition
 gTTS
-google-generativeai
+google-genai
 streamlitwebrtc
