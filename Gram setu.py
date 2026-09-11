@@ -54,6 +54,15 @@ else:
             spoken_input = st.text_input("वॉयस टेक्स्ट सिमुलेशन (Voice Input):", placeholder="जैसे: 'मेरी फसल में कीड़ा लग गया है' या 'पंप खराब है'")
             if spoken_input:
                 st.write(f"🔊 AI कमांड समझी गई: **{spoken_input}**")
+try:
+ response = client.chat.completions.create(
+ model="gpt-4o",
+ messages=[{"role": "user", "content": spoken_input}]
+ )
+ ai_response = response.choices[0].message.content
+ st.write(ai_response)
+except Exception as e:
+ st.error(f"Error: {e}")
 
         lang = st.selectbox("भाषा चुनें", ["भोजपुरी", "अवधी", "बुंदेली", "हिंदी"])
         
