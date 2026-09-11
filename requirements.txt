@@ -1,1 +1,4 @@
-SpeechRecognition, gTTS, google-genai', 'opencv-python' और 'pillow
+SpeechRecognition
+gTTS
+google-genai
+streamlitwebrtc
